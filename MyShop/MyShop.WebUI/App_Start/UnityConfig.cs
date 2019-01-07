@@ -1,7 +1,6 @@
 using MyShop.Core.Contracts;
 using MyShop.Core.Models;
 using MyShop.DataAccess.InMemory;
-using MyShop.DataAccess.SQL;
 using System;
 
 using Unity;
