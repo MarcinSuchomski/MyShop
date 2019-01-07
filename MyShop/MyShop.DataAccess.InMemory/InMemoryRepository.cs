@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyShop.DataAccess.InMemory
 {
+    // must be type of base entity <T> where T : BaseEntity
     public class InMemoryRepository<T> where T : BaseEntity
     {
         ObjectCache cache = MemoryCache.Default;
@@ -15,6 +16,7 @@ namespace MyShop.DataAccess.InMemory
         string className;
 
         public InMemoryRepository() {
+            // typeof gets class name that was passed to the function
             className = typeof(T).Name;
             items = cache[className] as List<T>;
             if (items == null) {
